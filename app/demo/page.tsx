@@ -1,8 +1,7 @@
-import NodeCard from "../components/NodeCard";
-import Planner from "./Planner";
+import NodeArea from "./NodeArea";
 
 export default function Demo() {
     return (
-        <Planner />
+        <NodeArea />
     );
 } 
