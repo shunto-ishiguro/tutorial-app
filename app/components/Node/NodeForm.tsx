@@ -1,4 +1,5 @@
-// components/NodeForm.tsx
+//components/Node/NodeForm.tsx
+
 "use client";
 import { useState } from "react";
 import { NodeType } from "./nodeConfig";
@@ -6,13 +7,16 @@ import FormInputs from "./FormInputs";
 
 type NodeFormProps = {
     type: NodeType;
-    colorClass: string; // ボタン色
+    colorClass: string;
     onComplete: (rows: { label: string; value: string }[]) => void;
-    onCancel: () => void; // キャンセル時
+    onCancel: () => void;
+    initialData?: { label: string; value: string }[];
 };
 
-export default function NodeForm({ type, colorClass, onComplete, onCancel }: NodeFormProps) {
-    const [formData, setFormData] = useState<{ [key: string]: string }>({});
+export default function NodeForm({ type, colorClass, onComplete, onCancel, initialData }: NodeFormProps) {
+    const [formData, setFormData] = useState<{ [key: string]: string }>(
+        initialData ? Object.fromEntries(initialData.map((r) => [r.label, r.value])) : {}
+    );
 
     const handleComplete = () => {
         const rows = Object.entries(formData).map(([label, value]) => ({ label, value }));
