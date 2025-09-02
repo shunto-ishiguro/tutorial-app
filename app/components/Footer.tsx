@@ -4,7 +4,7 @@ import { FaXTwitter, FaEnvelope } from 'react-icons/fa6';
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-white p-5 text-center mt-auto w-full">
+        <footer className="bg-gray-900 text-white p-6 text-center mt-auto w-full max-w-6xl mx-auto px-4">
             <div className="flex justify-center items-center gap-15 mb-4">
                 <div className="flex items-center justify-center">
                     <a href="mailto:your_email@example.com" aria-label="お問い合わせ" className="hover:text-blue-500 transition-colors">
