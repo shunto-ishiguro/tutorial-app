@@ -1,3 +1,5 @@
+//components/Node/FormInputs.tsx
+
 import LabeledInput from "./LabeledInput";
 import { nodeFieldConfig, NodeType } from "./nodeConfig";
 

@@ -1,6 +1,9 @@
+//components/Planner/usePlanner.ts
+
 "use client";
 import { useState } from "react";
 import { NodeType } from "../Node/nodeConfig";
+import { getDatesInRange } from "../utils/date";
 
 export interface NodeData {
     id: string;
@@ -16,7 +19,7 @@ export function usePlanner() {
 
     const setDateRange = (newDates: string[]) => {
         setDates(newDates);
-        setPlans(Object.fromEntries(newDates.map((d) => [d, []])));
+        setPlans(Object.fromEntries(newDates.map((d) => [d, plans[d] || []])));
     };
 
     const addNode = (rows: { label: string; value: string }[]) => {
@@ -28,7 +31,7 @@ export function usePlanner() {
         };
         setPlans((prev) => ({
             ...prev,
-            [targetDate]: [...prev[targetDate], newNode],
+            [targetDate]: [...(prev[targetDate] || []), newNode],
         }));
         setAddingType(null);
         setTargetDate("");
@@ -49,15 +52,4 @@ export function usePlanner() {
         addNode,
         updateDayNodes,
     };
-}
-
-export function getDatesInRange(start: string, end: string): string[] {
-    const dates: string[] = [];
-    const current = new Date(start);
-    const last = new Date(end);
-    while (current <= last) {
-        dates.push(current.toISOString().split("T")[0]);
-        current.setDate(current.getDate() + 1);
-    }
-    return dates;
 }

@@ -1,3 +1,5 @@
+//components/Node/LabeledInput.tsx
+
 type LabeledInputProps = {
     label: string;
     placeholder: string;
