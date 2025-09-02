@@ -1,5 +1,5 @@
-import NodeArea from "./NodeArea";
-import Planner from "./Planner";
+import NodeArea from "../components/Node/NodeArea";
+import Planner from "../components/Planner/Planner";
 
 export default function Demo() {
     return (
