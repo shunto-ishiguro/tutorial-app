@@ -1,3 +1,5 @@
+// components/utils/date.ts
+
 export function getDatesInRange(start: string, end: string): string[] {
     const dates: string[] = [];
     const current = new Date(start);
