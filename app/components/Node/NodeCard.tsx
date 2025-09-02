@@ -1,4 +1,3 @@
-// components/NodeCard.tsx
 import { nodeFieldConfig, NodeType } from "./nodeConfig";
 
 type NodeCardProps = {

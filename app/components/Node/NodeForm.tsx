@@ -1,4 +1,3 @@
-// components/NodeForm.tsx
 "use client";
 import { useState } from "react";
 import { NodeType } from "./nodeConfig";
@@ -6,9 +5,9 @@ import FormInputs from "./FormInputs";
 
 type NodeFormProps = {
     type: NodeType;
-    colorClass: string; // ボタン色
+    colorClass: string;
     onComplete: (rows: { label: string; value: string }[]) => void;
-    onCancel: () => void; // キャンセル時
+    onCancel: () => void;
 };
 
 export default function NodeForm({ type, colorClass, onComplete, onCancel }: NodeFormProps) {
