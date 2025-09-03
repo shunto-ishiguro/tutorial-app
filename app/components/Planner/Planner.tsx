@@ -7,6 +7,7 @@ import { usePlanner } from "./usePlanner";
 import PlannerSidebar from "./PlannerSidebar";
 import PlannerContent from "./PlannerContent";
 
+//プラン作成画面全体のコンポーネント。プラン作成のすべてを管理、表示している。
 export default function Planner() {
     const planner = usePlanner();
     const printRef = useRef<HTMLDivElement>(null);

@@ -11,6 +11,7 @@ interface Props extends ReturnType<typeof usePlanner> {
     onPrint: () => void;
 }
 
+//操作パネル全体のコンポーネント。propsとして日付や追加するノードのタイプ、そのノードの日付を設定できる関数を受け取っている。
 export default function PlannerSidebar({
     dates,
     setDateRange,
@@ -35,9 +36,9 @@ export default function PlannerSidebar({
         <div className="w-full md:w-64 p-4 bg-gray-100 space-y-4 text-gray-800">
             <h2 className="font-bold text-gray-900">操作パネル</h2>
 
-            <DateRangePicker onSelect={handleSelectRange} />
+            <DateRangePicker onSelect={handleSelectRange} /*日付ピッカーを管理するコンポーネント*/ />
 
-            {dates.length > 0 && (
+            {dates.length > 0 && ( //設定された日付がおかしかったら日付セレクタ、タイプセレクタ、追加ボタンを表示しない
                 <div className="space-y-2">
                     <select
                         value={selectDate}
