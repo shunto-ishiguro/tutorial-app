@@ -2,7 +2,7 @@
 
 "use client";
 import NodeArea from "../Node/NodeArea";
-import NodeForm from "../Node/NodeForm"; // ← ここを追加
+import NodeForm from "../Node/NodeForm";
 import { NodeData } from "./usePlanner";
 import { useState } from "react";
 
@@ -21,19 +21,17 @@ export default function DayPlan({ date, dayIndex, nodes, onChange }: Props) {
     const [editingNode, setEditingNode] = useState<EditingNodeState | null>(null);
 
     return (
-        <div className="border-b pb-4 mb-4">
-            <h3 className="text-lg font-semibold mb-2">
+        <div className="border-b pb-4 mb-4 text-gray-800">
+            <h3 className="text-lg font-semibold mb-2 text-gray-900">
                 Day {dayIndex + 1} ({date})
             </h3>
 
-            {/* NodeAreaに編集・削除・ドラッグ機能を渡す */}
             <NodeArea
                 nodes={nodes}
                 setNodes={onChange}
                 onEditNode={(node) => setEditingNode({ node })}
             />
 
-            {/* ノード編集フォーム */}
             {editingNode && (
                 <NodeForm
                     type={editingNode.node.type}

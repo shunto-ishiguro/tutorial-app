@@ -1,4 +1,5 @@
 //components/DateRangePicker.tsx
+
 "use client";
 
 import { useState } from "react";
@@ -26,7 +27,7 @@ export default function DateRangePicker({ onSelect }: Props) {
     return (
         <form
             onSubmit={handleSubmit}
-            className="flex flex-wrap items-center gap-4 bg-gray-100 p-4 rounded-xl"
+            className="flex flex-wrap items-center gap-4 bg-gray-100 p-4 rounded-xl text-gray-800"
         >
             <label className="flex items-center gap-2">
                 出発日:
@@ -34,7 +35,7 @@ export default function DateRangePicker({ onSelect }: Props) {
                     type="date"
                     value={startDate}
                     onChange={(e) => setStartDate(e.target.value)}
-                    className="p-1 border rounded"
+                    className="p-2 border rounded text-gray-800"
                     required
                 />
             </label>
@@ -44,7 +45,7 @@ export default function DateRangePicker({ onSelect }: Props) {
                     type="date"
                     value={endDate}
                     onChange={(e) => setEndDate(e.target.value)}
-                    className="p-1 border rounded"
+                    className="p-2 border rounded text-gray-800"
                     required
                 />
             </label>

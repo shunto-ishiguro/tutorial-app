@@ -1,4 +1,4 @@
-//components/Planner/PlannerSidebar.tsx
+// components/Planner/PlannerSidebar.tsx
 
 "use client";
 import { useState } from "react";
@@ -32,8 +32,8 @@ export default function PlannerSidebar({
     };
 
     return (
-        <div className="w-64 p-4 bg-gray-100 space-y-4">
-            <h2 className="font-bold">操作パネル</h2>
+        <div className="w-full md:w-64 p-4 bg-gray-100 space-y-4 text-gray-800">
+            <h2 className="font-bold text-gray-900">操作パネル</h2>
 
             <DateRangePicker onSelect={handleSelectRange} />
 
@@ -42,7 +42,7 @@ export default function PlannerSidebar({
                     <select
                         value={selectDate}
                         onChange={(e) => setSelectDate(e.target.value)}
-                        className="w-full p-1 border rounded"
+                        className="w-full p-2 border rounded text-gray-800"
                     >
                         <option value="">日付を選択</option>
                         {dates.map((date) => (
@@ -55,7 +55,7 @@ export default function PlannerSidebar({
                     <select
                         value={selectedType}
                         onChange={(e) => setSelectedType(e.target.value as NodeType)}
-                        className="w-full p-1 border rounded"
+                        className="w-full p-2 border rounded text-gray-800"
                     >
                         {(["移動", "宿泊", "食事", "観光"] as NodeType[]).map((type) => (
                             <option key={type} value={type}>
@@ -66,7 +66,7 @@ export default function PlannerSidebar({
 
                     <button
                         onClick={handleAddClick}
-                        className="w-full bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+                        className="w-full bg-blue-500 text-white px-3 py-2 rounded hover:bg-blue-600"
                     >
                         ノードを追加
                     </button>
@@ -75,7 +75,7 @@ export default function PlannerSidebar({
 
             <button
                 onClick={onPrint}
-                className="w-full mt-4 bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                className="w-full mt-4 bg-green-500 text-white px-3 py-2 rounded hover:bg-green-600"
             >
                 PDF化
             </button>
