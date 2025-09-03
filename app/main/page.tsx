@@ -1,11 +1,13 @@
+import Header from "../components/Header";
+import Planner from "../components/Planner/Planner";
 
-import NodeArea from "./nodearea";
-
-export default function Page(){
+export default function Page() {
     return (
         <div>
-            <h1>ノードを追加できるようにするでぇ</h1>
-            <NodeArea />
+            <Header />
+            <main className="min-h-screen p-8 bg-gray-50">
+                <Planner />
+            </main>
         </div>
     );
 }
