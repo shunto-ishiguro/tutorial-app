@@ -16,7 +16,7 @@ export default function Planner() {
     });
 
     return (
-        <div className="flex">
+        <div className="flex flex-col md:flex-row min-h-screen bg-gray-50 text-gray-800">
             <PlannerSidebar {...planner} onPrint={handlePrint} />
             <PlannerContent {...planner} ref={printRef} />
         </div>

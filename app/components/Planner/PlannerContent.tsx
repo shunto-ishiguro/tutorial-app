@@ -4,7 +4,7 @@
 import { forwardRef } from "react";
 import DayPlan from "./DayPlan";
 import NodeForm from "../Node/NodeForm";
-import { NodeData, usePlanner } from "./usePlanner";
+import { usePlanner } from "./usePlanner";
 
 interface PlannerContentProps extends ReturnType<typeof usePlanner> { }
 
@@ -20,9 +20,9 @@ const PlannerContent = forwardRef<HTMLDivElement, PlannerContentProps>(
         updateDayNodes,
     }, ref) => {
         return (
-            <div className="flex-1 p-4" ref={ref}>
-                <h2 className="text-xl font-bold mb-4">プラン内容</h2>
-                {dates.length === 0 && <p className="text-gray-500">日程を選択してください</p>}
+            <div className="flex-1 p-2 sm:p-4 text-gray-800" ref={ref}>
+                <h2 className="text-xl font-bold mb-4 text-gray-900">プラン内容</h2>
+                {dates.length === 0 && <p className="text-gray-600">日程を選択してください</p>}
 
                 {dates.map((date, index) => {
                     const isAddingForm = addingType && targetDate === date;
