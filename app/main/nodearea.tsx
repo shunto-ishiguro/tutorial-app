@@ -60,8 +60,8 @@ const HotelNode = () => {
 }
 
 //ノードを描画するエリア
-export default function NodeArea(){
-    const [nodes, setNodes] = useState<number[]>([1,1]);
+export default function NodeArea() {
+    const [nodes, setNodes] = useState<number[]>([1, 1]);
     return (
         <div>
             {nodes.map((id) => (
