@@ -40,10 +40,10 @@ export default function DayPlan({ date, dayIndex, nodes, onChange }: Props) {
                     type={editingNode.node.type}
                     colorClass="bg-yellow-500"
                     initialData={editingNode.node.rows}
-                    onComplete={(rows) => {
+                    onComplete={(rows) => { //ノードフォームで完了ボタンが押されたときの処理
                         const updatedNodes = nodes.map((n) =>
                             n.id === editingNode.node.id ? { ...n, rows } : n
-                        );
+                        ); //編集中のノードとidが一緒のノードにrowsを追加
                         onChange(updatedNodes);
                         setEditingNode(null);
                     }}
