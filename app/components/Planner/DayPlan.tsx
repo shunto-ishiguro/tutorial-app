@@ -6,6 +6,7 @@ import NodeForm from "../Node/NodeForm";
 import { NodeData } from "./usePlanner";
 import { useState } from "react";
 
+//受け取るpropsの中身を決めるインターフェース
 interface Props {
     date: string;
     dayIndex: number;
@@ -13,13 +14,15 @@ interface Props {
     onChange: (newNodes: NodeData[]) => void;
 }
 
+//操作するノードのデータのためのインターフェース
 interface EditingNodeState {
     node: NodeData;
 }
 
+//受け取ったpropsをもとに日付ごとのノードを表示するコンポーネント
 export default function DayPlan({ date, dayIndex, nodes, onChange }: Props) {
     const [editingNode, setEditingNode] = useState<EditingNodeState | null>(null);
-
+//今の日付と線→その日のノード一覧を出力
     return (
         <div className="border-b pb-4 mb-4 text-gray-800">
             <h3 className="text-lg font-semibold mb-2 text-gray-900">
@@ -32,7 +35,7 @@ export default function DayPlan({ date, dayIndex, nodes, onChange }: Props) {
                 onEditNode={(node) => setEditingNode({ node })}
             />
 
-            {editingNode && (
+            {editingNode && ( //ノード編集中のときはノードフォームを表示する
                 <NodeForm
                     type={editingNode.node.type}
                     colorClass="bg-yellow-500"
